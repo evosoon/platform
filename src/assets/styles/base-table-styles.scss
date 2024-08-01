@@ -1,0 +1,50 @@
+.control-panel {
+    background-color: var(--color-background);
+    justify-content: space-between;
+    border-radius: 6px;
+    margin: 8px;
+    padding: 12px;
+    overflow-x: auto;
+    .search-tool {
+      .search-item {
+        flex-direction: column;
+        margin-right: 16px;
+        min-width: 80px;
+        .title {
+          height: 26px;
+        }
+        .input {
+          min-width: 80px;
+        }
+      }
+    }
+    .create-tool {
+      align-items: end;
+      .zero {
+        width: 16px;
+      }
+    }
+  }
+  .table-center {
+    background-color: var(--color-background);
+    height: calc(100% - 110px);
+    border-radius: 6px;
+    padding: 12px;
+    margin: 8px;
+  }
+  .form-tag {
+    border-radius: 6px;
+    border: 1px solid var(--color-border-hover);
+    .tag-item {
+      margin: 2px 3px;
+      flex: 1;
+    }
+  }
+  .create-by {
+    font-size: 13px;
+    &:last-child {
+      font-size: 12px;
+      line-height: 16px;
+      color: var(--color-text-hover);
+    }
+  }

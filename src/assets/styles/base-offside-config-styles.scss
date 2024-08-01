@@ -1,0 +1,50 @@
+.offside-config {
+    height: 100%;
+    margin-left: 10px;
+    flex-direction: column;
+    .center {
+      flex: 1;
+      flex-direction: column;
+      align-items: start;
+      overflow: auto;
+      .form-title {
+        font-size: 16px;
+        margin: 10px 0;
+        font-family: AliBold;
+      }
+      .input-unit {
+        margin: 10px;
+        width: calc(100% - 20px);
+        .input-title {
+          font-size: 14px;
+          min-width: 100px;
+          text-align: right;
+          margin-right: 20px;
+          height: 30px;
+          line-height: 30px;
+          .require {
+            color: red;
+            font-weight: bold;
+          }
+        }
+        .input {
+          width: 100%;
+        }
+      }
+      .line{
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--color-border-hover);
+      }
+    }
+    .footer {
+      height: 47px;
+      margin-top: 2px;
+      justify-content: end;
+      align-items: end;
+      border-top: 1px solid var(--color-border-hover);
+      .submit {
+        margin-right: 10px;
+        width: 100px;
+      }
+    }
+  }

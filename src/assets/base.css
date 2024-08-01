@@ -1,0 +1,55 @@
+:root {
+  --color-background: #ffffff;
+  --color-background-light: #f5f5fc;
+  --color-background-primary: #efefff;
+  /*  */
+  --color-border: #d7d4de;
+  --color-border-hover: #ebeaf4;
+  --color-border-primary: #6861ff;
+  /*  */
+  --color-text: #626066;
+  --color-text-b: #303133;
+  --color-text-hover: #929099;
+  /* #7571c7 */
+  --color-text-primary: #6861ff;
+  --color-white: #ffffff;
+  --el-color-primary: green;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+body {
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.6;
+  font-family: AliMedium;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: AliMedium;
+  src: url('@/assets/fonts/AlibabaPuHuiTi-2-65-Medium.ttf')  format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: AliBold;
+  src: url('@/assets/fonts/AlibabaPuHuiTi-2-85-Bold.ttf')  format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: Arbitron;
+  src: url('@/assets/fonts/orbitron-black.ttf')  format('woff2');
+  font-display: swap;
+}
