@@ -17,12 +17,12 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 ## Project Setup
 
 ```sh
-// vite.config.ts
 pnpm install
 ```
 
 ### Configure the back-end address
 ```typescript
+// vite.config.ts
 const baseUrl = ''
 ```
 
