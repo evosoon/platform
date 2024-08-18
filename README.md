@@ -9,11 +9,8 @@
 
 ## 部分页面
 ![saber-1](https://github.com/user-attachments/assets/51fec905-92e7-4154-add6-f9bfe5d01849)
-
-![saber-2](https://github.com/user-attachments/assets/cd10d775-15c0-4d0b-a7be-4bcb264557a8)
-
-![saber-3](https://github.com/user-attachments/assets/ba295d76-91a2-4c87-8ae0-1c096a0b241a)
-
+![saber-2](https://github.com/user-attachments/assets/136985dd-a66c-42e1-a40c-570384aef608)
+![saber-3](https://github.com/user-attachments/assets/392f068d-84af-4695-910a-2463cf33802d)
 ![saber-4](https://github.com/user-attachments/assets/3cb8b0ec-cd5a-4c6e-ba78-be0a7d14501c)
 
 
