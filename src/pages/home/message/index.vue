@@ -87,7 +87,7 @@
         <el-table-column label="模板内容" min-width="160">
           <template #default="scope">
             <TemplateContent :data="scope.row.content">
-              <div class="pointer content" v-text="scope.row.content"></div>
+              <div class="pointer content" v-html="useReplacePlaceholders(scope.row.content,true)"></div>
             </TemplateContent>
           </template>
         </el-table-column>
@@ -153,6 +153,7 @@ import type {
 import { useUserStore } from '@/stores/user'
 import { channelInit } from '@/pages/home/configRule/data'
 import type { ListAbout } from './types'
+import { useReplacePlaceholders } from '@/hooks/useReplacePlaceholders'
 const pageSizeInit = inject('pageSizeInit') as number[]
 const userStore = useUserStore()
 // loading

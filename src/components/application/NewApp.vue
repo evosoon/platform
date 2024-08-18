@@ -85,7 +85,6 @@ import { reactive} from 'vue'
   .center-title {
     margin: 15px 0;
     font-size: 16px;
-    font-family: AliBold;
   }
   .center-input {
     margin: 18px 15px;

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*声明 WebFont*/
+        @font-face {
+        font-family: 'orbitron-black';
+        src: url('./orbitron-black.eot');
+        src:
+            url('./orbitron-black.eot?#font-spider') format('embedded-opentype'),
+            url('./orbitron-black.woff2') format('woff2'),
+            url('./orbitron-black.woff') format('woff'),
+            url('./orbitron-black.ttf') format('truetype'),
+            url('./orbitron-black.svg') format('svg');
+        font-weight: normal;
+        font-style: normal;
+        }
+        .test{
+            font-family: orbitron-black;
+        }
+    </style>
+</head>
+<body>
+    <div class="test">
+        abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()[],./\|
+    </div>
+</body>
+</html>

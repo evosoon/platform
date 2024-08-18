@@ -36,7 +36,7 @@ const props = defineProps({
   line-height: 60px;
   .head-title {
     letter-spacing: 1px;
-    font-family: AliBold;
+
     font-size: 20px;
     font-weight: bold;
   }

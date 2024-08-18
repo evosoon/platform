@@ -28,7 +28,7 @@ body {
     color 0.5s,
     background-color 0.5s;
   line-height: 1.6;
-  font-family: AliMedium;
+  font-family: 'AliBold', 'AliBoldMini', sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -37,19 +37,27 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+.AliBold{
+  font-family: 'AliBold', 'AliBoldMini', sans-serif;
+}
 
 @font-face {
-  font-family: AliMedium;
-  src: url('@/assets/fonts/AlibabaPuHuiTi-2-65-Medium.ttf')  format('woff2');
+  font-family: AliBold;
+  src: url('@/assets/fonts/AlibabaPuHuiTi-2-85-Bold.woff2') format('woff2');
   font-display: swap;
 }
 @font-face {
-  font-family: AliBold;
-  src: url('@/assets/fonts/AlibabaPuHuiTi-2-85-Bold.ttf')  format('woff2');
-  font-display: swap;
+  font-family: AliBoldMini;
+  src: url('@/assets/fonts/AlibabaPuHuiTi-2-85-Bold-Mini.woff2') format('woff2');
+  font-display: fallback;
 }
+
+.Arbitron {
+  font-family: 'Arbitron';
+}
+
 @font-face {
   font-family: Arbitron;
-  src: url('@/assets/fonts/orbitron-black.ttf')  format('woff2');
-  font-display: swap;
+  src: url('@/assets/fonts/orbitron-black.woff2') ;
+  font-display: fallback;
 }
