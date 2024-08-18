@@ -108,7 +108,7 @@
         <el-table-column label="消息内容" min-width="160">
           <template #default="scope">
             <TemplateContent :data="scope.row.content">
-              <div class="pointer content" v-text="scope.row.content"></div>
+              <div class="pointer content" v-html="useReplacePlaceholders(scope.row.content,true)"></div>
             </TemplateContent>
           </template>
         </el-table-column>
@@ -190,6 +190,7 @@ import DetailNotification from './components/DetailNotification.vue'
 import Table from '@/components/Table/Table.vue'
 import Drawer from '@/components/Drawer/Drawer.vue'
 import TemplateContent from '@/components/home/TemplateContent/index.vue'
+import { useReplacePlaceholders } from '@/hooks/useReplacePlaceholders'
 const pageSizeInit = inject('pageSizeInit') as number[]
 
 let loading = ref(false)

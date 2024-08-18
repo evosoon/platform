@@ -13,8 +13,8 @@
     align-center 
     style="border-radius: 6px;"
   >
-  <article class="center color">
-   {{props.data}}
+  <article class="center color" v-html="useReplacePlaceholders(props.data)">
+   
   </article>
     <template #footer>
       <div class="dialog-footer">
@@ -31,6 +31,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { MessageType, useElMessage } from "@/hooks/useMessage";
+import { useReplacePlaceholders } from '@/hooks/useReplacePlaceholders';
 interface Props {
   title:string
   width:number
@@ -58,7 +59,6 @@ const handleCopy = (data:string)=>{
     max-height: 60vh;
     overflow: auto;
     text-align: left;
-    white-space: pre-wrap;
     padding: 6px;
     box-shadow: 0 0 6px 3px var(--color-background-light) inset;
     border-radius: 6px;

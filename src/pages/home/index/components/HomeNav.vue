@@ -2,8 +2,8 @@
   <div class="home-nav color flex">
     <header>
       <div class="nav-logo nowrap">
-        <img :src="logo" />
-        <span>Saber</span>
+        <img class="img" :src="logo" />
+        <span class="span Arbitron">Saber</span>
       </div>
     </header>
     <nav
@@ -161,14 +161,13 @@ const handleOutLoginWrapper = async () => {
     .nav-logo {
       word-spacing: 6px;
       letter-spacing: 1px;
-      img {
+      .img {
         width: 26px;
         height: 26px;
         vertical-align: -10%;
         object-fit: cover;
       }
-      span {
-        font-family: Arbitron;
+      .span {
         font-weight: bolder;
         margin-left: 15px;
         font-size: 28px;

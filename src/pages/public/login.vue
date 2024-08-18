@@ -5,16 +5,16 @@
         <template #reference>
           <div class="logo">
             <img src="@/assets/logo.png" alt="" />
-            <span>Saber</span>
+            <span class="Arbitron">Saber</span>
           </div>
         </template>
         <div class="team-about flex">
-          <span>开发者团队</span>
-          <span v-text="showInfo.developers"></span>
-          <span>更多</span>
+          <span class="span">开发者团队</span>
+          <span class="base" v-text="showInfo.developers"></span>
+          <span class="span">更多</span>
           <template v-for="item in showInfo.more" :key="item.title">
             <el-link
-              class="el-link"
+              class="el-link base"
               :href="item.url"
               target="_blank"
               rel="noopener"
@@ -25,10 +25,18 @@
         </div>
       </el-popover>
     </header>
-    <main>
-      <img src="@/assets/login.png" alt="" />
+    <article class="article">
+      <transition name="fade">
+        <img
+          v-if="image"
+          class="img"
+          :src="loginImg"
+          alt=""
+          key="login-image"
+        />
+      </transition>
       <div class="form color">
-        <div class="title">登录到Saber</div>
+        <div class="title">登录到 <span class="Arbitron">Saber</span></div>
         <el-input
           v-model="loginInfo.username"
           class="input"
@@ -52,10 +60,13 @@
           >登录</el-button
         >
       </div>
-    </main>
+    </article>
     <footer class="flex">
-      <span v-html="showInfo.sign"></span>
-      <a href="javascript:;" class="pointer" @click.prevent="isShowMore = !isShowMore"
+      <span class="Arbitron" v-html="showInfo.sign"></span>
+      <a
+        href="javascript:;"
+        class="pointer AliBold"
+        @click.prevent="isShowMore = !isShowMore"
         >技术支持</a
       >
     </footer>
@@ -73,11 +84,11 @@
 </template>
 
 <script lang="ts" setup>
-import { reactive, ref } from 'vue'
+import { onMounted, reactive, ref } from 'vue'
 import { Login } from '@/apis/login/login'
 import { useRouter, type Router } from 'vue-router'
 import { useUserStore } from '@/stores/user'
-
+import loginImg from '@/assets/login.png'
 const $router: Router = useRouter()
 const userStore = useUserStore()
 
@@ -117,6 +128,14 @@ async function submitLogin() {
   }
   isLoading.value = false
 }
+const image = ref<boolean>(false)
+onMounted(() => {
+  const img = new Image()
+  img.onload = () => {
+    image.value = true
+  }
+  img.src = loginImg
+})
 </script>
 
 <style lang="scss" scoped>
@@ -135,6 +154,8 @@ async function submitLogin() {
       img {
         width: 30px;
       }
+      /* 定义进入和离开的过渡状态 */
+
       span {
         font-family: Arbitron;
         font-size: 24px;
@@ -144,15 +165,30 @@ async function submitLogin() {
       }
     }
   }
-  
-  main {
+
+  .article {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
-    img {
+    transition: transform 1.5s ease;
+
+    .fade-enter-active,
+    .fade-leave-active {
+      transition: opacity 1.5s ease;
+      transition: transform 1.5s ease;
+    }
+
+    .fade-enter-from,
+    .fade-leave-to {
+      opacity: 0;
+      transform: scale(0);
+    }
+    .img {
       width: 30%;
       margin-right: 6%;
+      transition: transform 1.5s ease-in-out;
     }
+    margin-right: 16%;
     .form {
       width: 400px;
       height: 430px;
@@ -160,6 +196,8 @@ async function submitLogin() {
       border-radius: 10px;
       background-color: var(--color-background);
       box-shadow: 0 0 10px 1px #c2bef1;
+      transition: all 1.5s ease-in-out;
+
       .title {
         color: #4d45ea;
         font-size: 24px;
@@ -167,7 +205,6 @@ async function submitLogin() {
         margin: 10px 0;
         padding-left: 5px;
         font-weight: bolder;
-        font-family: AliMedium;
       }
       .input {
         height: 45px;
@@ -200,14 +237,16 @@ async function submitLogin() {
     }
   }
   @media (max-width: 600px) {
-    center {
+    .article {
+      justify-content: center;
+      margin: 0;
       img {
         display: none;
       }
     }
   }
-  @media (max-width: 400px) {
-    center {
+  @media (max-width: 440px) {
+    .article {
       margin: 0 10px;
       min-width: 260px;
     }
@@ -226,13 +265,12 @@ async function submitLogin() {
     flex-direction: column;
     right: 20px;
     bottom: 50px;
-    color: var(--color-text-primary);
+    color: #313d89c5;
     background-color: var(--color-background-light);
-    height: 130px;
     width: 260px;
     border-radius: 10px;
     box-shadow: 0 0 10px 1px #bab6f4ab;
-    padding: 20px;
+    padding: 5px 20px;
     span {
       padding: 5px 0;
     }
@@ -240,9 +278,15 @@ async function submitLogin() {
 }
 
 .team-about {
-  color: var(--color-text-primary);
   flex-direction: column;
   align-items: start;
+  .base {
+    color: #313d89c5;
+  }
+
+  .span {
+    color: #0b22b8c5;
+  }
   span,
   .el-link {
     padding: 2px 5px;
